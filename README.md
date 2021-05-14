@@ -158,21 +158,45 @@ export FLUX_KEY_FP=AB675CE4CC64251G3S9AE1DAA88ARRTY2C009E2D
 2. Install the master node
 
 ```sh
+export SERVER_IP=10.0.0.41
+export USER=miguel
+
 k3sup install \
-    --host=169.254.1.1 \
-    --user=k8s-at-home \
-    --k3s-version=v1.20.5+k3s1 \
-    --k3s-extra-args="--disable servicelb --disable traefik"
+  --ip $SERVER_IP \
+  --user $USER \
+  --cluster \
+  --k3s-version=v1.20.5+k3s1 \
+  --k3s-extra-args="--disable servicelb --disable traefik"
 ```
 
-3. Join worker nodes (optional)
+3. Join worker nodes
 
 ```sh
+export USER=miguel
+export SERVER_IP=10.0.0.41
+export NEXT_SERVER_IP=10.0.0.43
+
 k3sup join \
-    --host=169.254.1.2 \
-    --server-host=169.254.1.1 \
-    --k3s-version=v1.20.5+k3s1 \
-    --user=k8s-at-home
+  --ip $NEXT_SERVER_IP \
+  --user $USER \
+  --server-user $USER \
+  --server-ip $SERVER_IP \
+  --server \
+  --k3s-version=v1.20.5+k3s1
+```
+
+```sh
+export USER=miguel
+export SERVER_IP=10.0.0.41
+export NEXT_SERVER_IP=10.0.0.45
+
+k3sup join \
+  --ip $NEXT_SERVER_IP \
+  --user $USER \
+  --server-user $USER \
+  --server-ip $SERVER_IP \
+  --server \
+  --k3s-version=v1.20.5+k3s1
 ```
 
 4. Verify the nodes are online
