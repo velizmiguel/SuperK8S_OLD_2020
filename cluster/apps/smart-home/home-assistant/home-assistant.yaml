@@ -1,0 +1,39 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+spec:
+  interval: 1h
+  chart:
+    spec:
+      # registryUrl=https://k8s-at-home.com/charts/
+      chart: home-assistant
+      version: 7.4.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  values:
+    image:
+      repository: homeassistant/home-assistant
+      tag: 2021.4.4
+    env:
+      TZ: America/Chicago
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    ingress:
+      enabled: true
+      hosts:
+      - host: home-assistant.veliz.cc
+        paths:
+        - path: /
+          pathType: Prefix
+    monitoring:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+    persistence:
+      config:
+        enabled: true
+        emptyDir:
+          enabled: true
