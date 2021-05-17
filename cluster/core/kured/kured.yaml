@@ -25,10 +25,3 @@ spec:
       startTime: "0:00"
       endTime: "4:00"
       timeZone: "America/New_York"
-    tolerations:
-    - key: "arm"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/master"
-      operator: "Exists"
-    metrics:
-      create: true
