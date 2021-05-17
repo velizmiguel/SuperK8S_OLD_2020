@@ -35,5 +35,4 @@ spec:
     persistence:
       config:
         enabled: true
-        emptyDir:
-          enabled: true
+        existingClaim: home-assistant-config
