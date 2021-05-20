@@ -32,9 +32,3 @@ spec:
       tls:
       - hosts:
         - "tautulli.${SECRET_DOMAIN}"
-    resources:
-      requests:
-        memory: 250Mi
-        cpu: 500m
-      limits:
-        memory: 1500Mi
