@@ -7,3 +7,4 @@ resources:
 - k8s-at-home-charts.yaml
 - weaveworks-kured-charts.yaml
 - longhorn-charts.yaml
+- stakater-charts.yaml
