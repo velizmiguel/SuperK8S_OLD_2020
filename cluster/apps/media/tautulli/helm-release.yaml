@@ -32,10 +32,6 @@ spec:
       tls:
       - hosts:
         - "tautulli.${SECRET_DOMAIN}"
-    persistence:
-      config:
-        enabled: true
-        existingClaim: tautulli-config-v2
     resources:
       requests:
         memory: 250Mi
