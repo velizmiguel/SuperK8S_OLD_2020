@@ -36,7 +36,6 @@ spec:
       config:
         enabled: true
         existingClaim: homer-config-v1
-        mountPath: /www/assets
     addons:
       codeserver:
         enabled: true
