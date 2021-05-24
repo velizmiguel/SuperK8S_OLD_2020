@@ -5,4 +5,5 @@ resources:
 - metallb-system.yaml
 - networking.yaml
 - media.yaml
+- home.yaml
 - smart-home.yaml
