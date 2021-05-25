@@ -23,17 +23,25 @@ spec:
     env:
       TZ: "America/New_York"
     replicas: 3
-    serviceTCP:
-      enabled: true
-      type: LoadBalancer
-      loadBalancerIP: "${LB_BLOCKY}"
-      externalTrafficPolicy: Local
-    serviceUDP:
-      enabled: true
-      type: LoadBalancer
-      loadBalancerIP: "${LB_BLOCKY}"
-      externalTrafficPolicy: Local
-    # blocky configuration
+    service:
+      port:
+        port: 4000
+      additionalServices:
+      - enabled: true
+        nameSuffix: dns
+        type: LoadBalancer
+        loadBalancerIP: "${LB_BLOCKY_IP}"
+        port:
+          port: 53
+          name: dns-tcp
+          protocol: TCP
+          targetPort: 53
+        additionalPorts:
+        - port: 53
+          name: dns-udp
+          protocol: UDP
+          targetPort: 53
+        externalTrafficPolicy: Local
     config: |
       upstream:
         # these external DNS resolvers will be used. Blocky picks 2 random resolvers from the list for each query
