@@ -22,23 +22,18 @@ spec:
       tag: v0.14
     env:
       TZ: "America/New_York"
-    replicas: 3
-    service:
-      port:
-        port: 4000
-      additionalServices:
-      - enabled: true
-        nameSuffix: dns
-        type: LoadBalancer
-        loadBalancerIP: "10.0.0.67"
-        port:
-          port: 53
-          name: dns-tcp
-          protocol: TCP
-          targetPort: 53
-        annotations:
-          metallb.universe.tf/allow-shared-ip: blocky-svc
-        externalTrafficPolicy: Local
+    serviceTCP:
+      enabled: true
+      type: LoadBalancer
+      loadBalancerIP: "${LB_BLOCKY_IP}"
+      annotations:
+        metallb.universe.tf/allow-shared-ip: blocky-svc
+    serviceUDP:
+      enabled: true
+      type: LoadBalancer
+      loadBalancerIP: "${LB_BLOCKY_IP}"
+      annotations:
+        metallb.universe.tf/allow-shared-ip: blocky-svc
     config: |
       upstream:
         # these external DNS resolvers will be used. Blocky picks 2 random resolvers from the list for each query
