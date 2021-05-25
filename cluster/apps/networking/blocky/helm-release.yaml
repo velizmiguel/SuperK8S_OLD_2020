@@ -30,7 +30,7 @@ spec:
       - enabled: true
         nameSuffix: dns
         type: LoadBalancer
-        loadBalancerIP: "10.0.0.77"
+        loadBalancerIP: "${LB_BLOCKY_IP}"
         port:
           port: 53
           name: dns-udp
@@ -41,6 +41,10 @@ spec:
       conditional:
         mapping:
           local: udp:10.0.0.1
+      customDNS:
+        mapping:
+          localhost: 127.0.0.1
+          ${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
       blocking:
         blackLists:
           ads:
