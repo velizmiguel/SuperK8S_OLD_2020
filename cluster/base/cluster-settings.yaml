@@ -7,3 +7,8 @@ metadata:
 data:
   METALLB_LB_RANGE: 10.0.0.70-10.0.0.80
   INGRESS_NGINX_LB: 10.0.0.70
+  K8S_0_IP: 10.0.0.41
+  K8S_1_IP: 10.0.0.43
+  K8S_2_IP: 10.0.0.45
+  LB_COREDNS_IP: 10.0.0.90
+  
