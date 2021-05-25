@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - ingress-nginx
 - wildcard-certificate
-- adguard
+- coredns
