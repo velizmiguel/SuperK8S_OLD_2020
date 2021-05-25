@@ -45,6 +45,7 @@ spec:
         mapping:
           localhost: 127.0.0.1
           ${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
+          home.${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
       blocking:
         blackLists:
           ads:
