@@ -30,7 +30,7 @@ spec:
       - enabled: true
         nameSuffix: dns
         type: LoadBalancer
-        loadBalancerIP: "${LB_BLOCKY_IP}"
+        loadBalancerIP: "10.0.0.67"
         port:
           port: 53
           name: dns-tcp
