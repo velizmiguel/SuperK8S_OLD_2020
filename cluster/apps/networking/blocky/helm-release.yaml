@@ -30,14 +30,17 @@ spec:
       - enabled: true
         nameSuffix: dns
         type: LoadBalancer
-        loadBalancerIP: "10.0.0.77"
+        loadBalancerIP: "${LB_BLOCKY_IP}"
         port:
           port: 53
           name: dns-tcp
           protocol: TCP
           targetPort: 53
-        annotations:
-          metallb.universe.tf/allow-shared-ip: blocky-svc
+        additionalPorts:
+        - port: 53
+          name: dns-udp
+          protocol: UDP
+          targetPort: 53
         externalTrafficPolicy: Local
     config: |
       upstream:
