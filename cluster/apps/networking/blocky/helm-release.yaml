@@ -49,7 +49,7 @@ spec:
       customDNS:
         mapping:
           localhost: 127.0.0.1
-          ${SECRET_DOMAIN}: 10.0.0.70
+          ${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
       blocking:
         blackLists:
           ads:
@@ -68,8 +68,5 @@ spec:
             # - special
       clientLookup:
         upstream: udp:10.0.0.1
-      prometheus:
-        enable: true
-        path: /metrics
       httpPort: 4000
       logLevel: info
