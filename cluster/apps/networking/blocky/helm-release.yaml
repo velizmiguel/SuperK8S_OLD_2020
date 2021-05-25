@@ -31,6 +31,7 @@ spec:
         nameSuffix: dns
         type: LoadBalancer
         loadBalancerIP: "${LB_BLOCKY_IP}"
+        externalTrafficPolicy: Local
         port:
           port: 53
           name: dns-tcp
