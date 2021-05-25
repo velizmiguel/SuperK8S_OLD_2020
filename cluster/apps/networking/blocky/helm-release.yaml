@@ -31,12 +31,14 @@ spec:
         nameSuffix: dns
         type: LoadBalancer
         loadBalancerIP: "${LB_BLOCKY_IP}"
-        externalTrafficPolicy: Local
         port:
           port: 53
           name: dns-tcp
           protocol: TCP
           targetPort: 53
+        annotations:
+          metallb.universe.tf/allow-shared-ip: blocky-svc
+        externalTrafficPolicy: Local
     config: |
       upstream:
         # these external DNS resolvers will be used. Blocky picks 2 random resolvers from the list for each query
