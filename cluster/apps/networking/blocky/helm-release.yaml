@@ -44,8 +44,8 @@ spec:
       customDNS:
         mapping:
           localhost: 127.0.0.1
-          ${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
-          home.${SECRET_DOMAIN}: ${INGRESS_NGINX_LB}
+          ${SECRET_DOMAIN}: 10.0.0.70
+          home.${SECRET_DOMAIN}: 10.0.0.70
       blocking:
         blackLists:
           ads:
