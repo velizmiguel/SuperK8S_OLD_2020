@@ -47,9 +47,7 @@ spec:
       customDNS:
         mapping:
           localhost: 127.0.0.1
-          printer.net: 10.0.0.70
           ${SECRET_DOMAIN}: 10.0.0.70
-          home.${SECRET_DOMAIN}: 10.0.0.70
       blocking:
         blackLists:
           ads:
