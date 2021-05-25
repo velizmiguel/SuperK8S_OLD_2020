@@ -11,3 +11,4 @@ data:
   K8S_1_IP: 10.0.0.43
   K8S_2_IP: 10.0.0.45
   LB_COREDNS_IP: 10.0.0.90
+  LB_BLOCKY: 10.0.0.95
