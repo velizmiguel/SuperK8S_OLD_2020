@@ -18,11 +18,11 @@ spec:
       interval: 5m
   values:
     communications:
-      discord:
+      slack:
         enabled: true
-        token: "${SECRET_BOTKUBE_DISCORD_TOKEN}"
-        botid: "${SECRET_BOTKUBE_DISCORD_BOT_ID}"
-        channel: "${SECRET_BOTKUBE_DISCORD_CHANNEL_ID}"
+        channel: "${SECRET_BOTKUBE_SLACK_CHANNEL}"
+        token: "${SECRET_BOTKUBE_SLACK_TOKEN}"
+        notiftype: short  
     serviceMonitor:
       enabled: true
     config:
