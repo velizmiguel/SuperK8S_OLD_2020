@@ -4,7 +4,6 @@ resources:
 - home
 - networking
 - system-upgrade
-- smart-home
 - media
 - kube-system
 - monitoring
