@@ -11,3 +11,4 @@ resources:
 - prometheus-community-charts.yaml
 - grafana-charts.yaml
 - infracloudio-charts.yaml
+- deliveryhero-charts.yaml
