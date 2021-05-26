@@ -9,3 +9,4 @@ resources:
 - longhorn-charts.yaml
 - stakater-charts.yaml
 - coredns-charts.yaml 
+- prometheus-community-charts.yaml
