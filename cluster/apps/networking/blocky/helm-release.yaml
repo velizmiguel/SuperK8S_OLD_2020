@@ -39,6 +39,9 @@ spec:
         externalTrafficPolicy: Local
     podAnnotations:
       configmap.reloader.stakater.com/reload: "blocky-config"
+    prometheus:
+      serviceMonitor:
+        enabled: true
     config: |
       upstream:
         externalResolvers:
