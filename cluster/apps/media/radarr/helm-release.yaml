@@ -54,7 +54,7 @@ spec:
       - 100
     additionalVolumeMounts:
     - name: media-movies
-      mountPath: "/media-rocinante"
+      mountPath: "/media-movie"
     additionalVolumes:
     - name: media-movies
       persistentVolumeClaim:
