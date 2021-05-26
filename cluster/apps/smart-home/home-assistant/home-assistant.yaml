@@ -24,7 +24,7 @@ spec:
     ingress:
       enabled: true
       hosts:
-      - host: home-assistant.veliz.cc
+      - host: home-assistant.${SECRET_DOMAIN}
         paths:
         - path: /
           pathType: Prefix
