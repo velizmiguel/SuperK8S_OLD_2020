@@ -28,7 +28,7 @@ spec:
         port: 4000
       additionalServices:
       - enabled: true
-        nameSuffix: dns-tcp
+        nameSuffix: dns
         type: LoadBalancer
         loadBalancerIP: "${LB_BLOCKY_IP}"
         port:
@@ -36,17 +36,12 @@ spec:
           name: dns-tcp
           protocol: TCP
           targetPort: 53
-        externalTrafficPolicy: Local
-      - enabled: true
-        nameSuffix: dns-udp
-        type: LoadBalancer
-        loadBalancerIP: "${LB_BLOCKY_IP}"
-        port:
-          port: 53
+        additionalPorts:
+        - port: 53
           name: dns-udp
           protocol: UDP
           targetPort: 53
-        externalTrafficPolicy: Local     
+        externalTrafficPolicy: Local
     podAnnotations:
       configmap.reloader.stakater.com/reload: "blocky-config"
     metrics:
