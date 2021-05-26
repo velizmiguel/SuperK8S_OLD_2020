@@ -28,7 +28,7 @@ spec:
     config:
       recommendations: false
       settings:
-        clustername: home-cluster
+        clustername: SuperK8S
       resources:
       - name: v1/services
         namespaces:
