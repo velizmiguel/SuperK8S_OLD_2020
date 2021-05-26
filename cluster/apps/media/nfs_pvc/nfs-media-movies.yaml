@@ -11,8 +11,8 @@ spec:
   - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: ${NFS_SERVER_IP}
-    path: /mnt/user/movies
+    server: 10.0.0.33
+    path: /
   mountOptions:
   - nfsvers=3
 ---
