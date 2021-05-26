@@ -68,6 +68,7 @@ spec:
           url: http://loki:3100
     dashboards:
       default:
+        # Ref: https://grafana.com/grafana/dashboards/13665
         speedtest:
           gnetId: 13665
           revision: 1
