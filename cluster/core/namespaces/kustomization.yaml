@@ -7,3 +7,4 @@ resources:
 - media.yaml
 - home.yaml
 - smart-home.yaml
+- monitoring.yaml
