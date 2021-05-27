@@ -4,17 +4,15 @@ kind: PersistentVolume
 metadata:
   name: nfs-media-tv-pv
 spec:
+  storageClassName: media-tv
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteMany
-  claimRef:
-    name:  nfs-media-tv-pvc
-    namespace: media
-  storageClassName: nfs
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${NFS_SERVER_IP}
-    path: /mnt/user/tv/
+    path: /mnt/user/tv
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -23,8 +21,10 @@ metadata:
   namespace: media
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: nfs
+  - ReadWriteMany
+  storageClassName: media-tv
   resources:
     requests:
       storage: 1Mi
+
+

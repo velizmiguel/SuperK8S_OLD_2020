@@ -4,14 +4,12 @@ kind: PersistentVolume
 metadata:
   name: nfs-media-downloads-pv
 spec:
+  storageClassName: media-downloads
   capacity:
     storage: 1Mi
   accessModes:
-    - ReadWriteMany
-  claimRef:
-    name:  nfs-media-downloads-pvc
-    namespace: media
-  storageClassName: nfs
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${NFS_SERVER_IP}
     path: /mnt/user/Downloads/
@@ -23,8 +21,8 @@ metadata:
   namespace: media
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: nfs
+  - ReadWriteMany
+  storageClassName: media-downloads
   resources:
     requests:
       storage: 1Mi
