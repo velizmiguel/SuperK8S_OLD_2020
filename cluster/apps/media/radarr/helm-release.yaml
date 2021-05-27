@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: ghcr.io/k8s-at-home/radarr
-      tag: v3.0.2.4552
+      tag: v3.2.0.5048
     env:
       TZ: "America/New_York"
     ingress:
@@ -49,9 +49,6 @@ spec:
       config:
         enabled: true
         existingClaim: radarr-config-v1
-    podSecurityContext:
-      supplementalGroups:
-      - 100
     additionalVolumeMounts:
     - name: media-movies
       mountPath: "/media-movie"
