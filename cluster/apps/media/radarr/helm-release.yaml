@@ -52,7 +52,7 @@ spec:
     additionalVolumeMounts:
     - name: media-movies
       mountPath: "/movies"
-    - name: media-donwloads
+    - name: media-downloads
       mountPath: "/downloads"
     additionalVolumes:
     - name: media-movies
