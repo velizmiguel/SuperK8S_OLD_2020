@@ -13,6 +13,13 @@ spec:
   nfs:
     server: ${NFS_SERVER_IP}
     path: /mnt/user/movies
+  mountOptions:
+  - nfsvers=3
+  - tcp
+  - intr
+  - hard
+  - noatime
+  - nodiratime
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
