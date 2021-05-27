@@ -4,3 +4,4 @@ resources:
 - nfs_pvc
 - radarr
 - tautulli
+- sonarr
