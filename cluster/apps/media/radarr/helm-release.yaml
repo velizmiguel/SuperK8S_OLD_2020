@@ -51,11 +51,16 @@ spec:
         existingClaim: radarr-config-v1
     additionalVolumeMounts:
     - name: media-movies
-      mountPath: "/media-movie"
+      mountPath: "/movies"
+    - name: media-donwloads
+      mountPath: "/downloads"
     additionalVolumes:
     - name: media-movies
       persistentVolumeClaim:
         claimName: nfs-media-movies-pvc
+    - name: media-downloads
+      persistentVolumeClaim:
+        claimName: nfs-media-downloads-pvc
     resources:
       requests:
         memory: 250Mi
