@@ -12,3 +12,4 @@ resources:
 - grafana-charts.yaml
 - infracloudio-charts.yaml
 - deliveryhero-charts.yaml
+- rook-ceph-charts.yaml
