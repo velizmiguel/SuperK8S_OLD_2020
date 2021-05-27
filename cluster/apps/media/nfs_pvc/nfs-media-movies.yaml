@@ -11,8 +11,8 @@ spec:
   - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: 10.0.0.33
-    path: /
+    server: ${NFS_SERVER_IP}
+    path: /mnt/user/movies
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
