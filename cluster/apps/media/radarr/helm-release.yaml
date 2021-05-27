@@ -45,10 +45,6 @@ spec:
         tls:
         - hosts:
           - "radarr.${SECRET_DOMAIN}"
-    persistence:
-      config:
-        enabled: true
-        existingClaim: radarr-config-v1
     podSecurityContext:
       supplementalGroups:
       - 100
