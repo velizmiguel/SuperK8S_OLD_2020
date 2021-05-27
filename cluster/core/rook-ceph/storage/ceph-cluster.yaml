@@ -3,7 +3,7 @@ apiVersion: ceph.rook.io/v1
 kind: CephCluster
 metadata:
   name: rook-ceph
-  namespace: system-rook-ceph
+  namespace: rook-ceph
 spec:
   cephVersion:
     image: ceph/ceph:v16.2.4
@@ -16,7 +16,7 @@ spec:
     count: 3
     allowMultiplePerNode: false
   monitoring:
-    enabled: false
+    enabled: true
     rulesNamespace: rook-ceph
   network:
   crashCollector:
@@ -46,13 +46,13 @@ spec:
         cpu: 35m
         memory: 800Mi
       limits:
-        memory: 1536Mi
+        memory: 1024Mi
     osd:
       requests:
-        cpu: "35m"
-        memory: "2048Mi"
+        cpu: 35m
+        memory: 2048Mi
       limits:
-        memory: "4096Mi"
+        memory: 4096Mi
   storage:
     useAllNodes: false
     useAllDevices: false
