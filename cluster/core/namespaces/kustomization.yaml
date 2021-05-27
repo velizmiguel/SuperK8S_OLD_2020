@@ -8,4 +8,4 @@ resources:
 - home.yaml
 - smart-home.yaml
 - monitoring.yaml
-- rook-ceph
+- rook-ceph.yaml
