@@ -1,6 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- networking
-- system-upgrade
+- home
 - kube-system
+- media
+- monitoring
+- networking
+- smart-home
+- system-upgrade
+
+
+
