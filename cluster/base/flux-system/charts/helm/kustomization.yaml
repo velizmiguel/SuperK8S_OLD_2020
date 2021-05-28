@@ -13,4 +13,3 @@ resources:
 - infracloudio-charts.yaml
 - deliveryhero-charts.yaml
 - rook-ceph-charts.yaml
-- fairwinds-charts.yaml
